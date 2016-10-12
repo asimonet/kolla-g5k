@@ -8,7 +8,7 @@
     state: started
     volumes:
     - /root/rally_home:/home/rally
-    command: sh ./launch_scenarios.sh ./{{ rally_scenarios_list }} {{ rally_times }} {{ rally_concurrency }} {{ rally_wait }}
+    command: python ./launch_scenarios.py ./{{ rally_scenarios_list }} {{ rally_times }} {{ rally_concurrency }} {{ rally_wait }}
 
 - name: Wait for the end of the test, this may take a while...
   command: docker ps
